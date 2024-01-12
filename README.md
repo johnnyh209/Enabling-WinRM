@@ -23,4 +23,26 @@ You should see the GPO that you just created listed in the group you assigned th
 3. Follow the following navigation path: `Computer Configuration > Administrative Templates > Windows Components`. Inside of `Windows Components`, find `Windows Remote Management`. Open `Windows Remote Management` to find two items listed: WinRM Client and WinRM Service. Open up WinRM Service.
 ![Step 7 WinRM Service (Group Policy)](https://github.com/johnnyh209/Enabling-WinRM/assets/33064730/c75f06b9-644b-4e70-a158-78ce15816b99)
 
-4. Double-click `Allow remote server management through WinRM` and 
+4. Double-click `Allow remote server management through WinRM` to open up a new window where you will enable WinRM. Click `OK` when finished to finalize the enabling of WinRM.
+![Step 8 Double Click (Group Policy)](https://github.com/johnnyh209/Enabling-WinRM/assets/33064730/b28ae992-07b7-4080-9f70-7c27111d69f3)
+![Step 9 Select Enabled (Group Policy)](https://github.com/johnnyh209/Enabling-WinRM/assets/33064730/cc05ba25-644f-4e52-b8e5-5f55f1e3cf60)
+
+## Enabling WinRM in Group Policy to Automatically Start
+
+1. Open `Group Policy Management` and navigate to the group of which the WinRM group policy has ben assigned to. Right-click on your WinRM group policy and click `Edit`.
+![Pc38VXDpEx](https://github.com/johnnyh209/Enabling-WinRM/assets/33064730/47aae4fa-0a59-409b-b720-abd04c56f780)
+
+2. Follow the following navigation path: `Computer Configuration > Preferences > Control Panel Settings`.
+![2  Control Panel Settings](https://github.com/johnnyh209/Enabling-WinRM/assets/33064730/acb7d51a-9478-4ab0-8fc7-1470c823e97a)
+
+3. In `Control Panel Settings`, right-click on `Services`, select `New`, and then select `Service`. This opens the `New Service Properties` window.
+![3](https://github.com/johnnyh209/Enabling-WinRM/assets/33064730/9021aefd-d897-4ade-9f22-a4c627fd4230)
+
+4. In the `New Service Properties` window:
+* Change `Startup` to **Automatic**,
+* Assign a name
+* Change `Service Action` to **Start service**
+* Click `OK`
+![4](https://github.com/johnnyh209/Enabling-WinRM/assets/33064730/695bf9dc-d51b-44e3-af58-e9c096273a0d)
+
+
