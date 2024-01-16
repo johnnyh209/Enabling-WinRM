@@ -29,7 +29,7 @@ You should see the GPO that you just created listed in the group you assigned th
 
 ## Enabling WinRM in Group Policy to Automatically Start
 
-1. Open `Group Policy Management` and navigate to the group of which the WinRM group policy has ben assigned to. Right-click on your WinRM group policy and click `Edit`.
+1. Open `Group Policy Management` and navigate to the group of which the WinRM group policy has been assigned to. Right-click on your WinRM group policy and click `Edit`.
 ![Pc38VXDpEx](https://github.com/johnnyh209/Enabling-WinRM/assets/33064730/47aae4fa-0a59-409b-b720-abd04c56f780)
 
 2. Follow the following navigation path: `Computer Configuration > Preferences > Control Panel Settings`.
@@ -45,4 +45,34 @@ You should see the GPO that you just created listed in the group you assigned th
 * Click `OK`
 ![4](https://github.com/johnnyh209/Enabling-WinRM/assets/33064730/695bf9dc-d51b-44e3-af58-e9c096273a0d)
 
+## Enabling Windows Remote Shell
 
+1.Open `Group Policy Management` and navigate to the group of which the WinRM group policy has been assigned to. Right-click on your WinRM group policy and click `Edit`.
+
+2. In `Group Policy Management Editor` for the GPO, follow the navigation path: `Computer Configuration > Policies > Administrative Templates > Windows Components`. Look for `Windows Remote Shell` from the list of Windows Components and double-click.
+![4  Windows Remote Shell (Double Click)](https://github.com/johnnyh209/Enabling-WinRM/assets/33064730/674537d3-00dc-4a11-bf17-f1ac1bc4cda1)
+
+3. Click on the circle next to `Enabled` then click `OK` to enable Windows Remote Shell.
+![6  Enabled](https://github.com/johnnyh209/Enabling-WinRM/assets/33064730/1d9141af-16fe-44d8-9f04-db32badbe339)
+
+## Adding a Firewall Exception for Remote Management
+
+1. In the `Group Policy Management Editor` for the GPO, follow this navigation (it is best to navigate on the left panel that contains the navigation tree): `Computer Configuration > Policies > Windows Settings > Security Settings > Windows Defender Firewall with Advanced Security`.
+![3  navigate tree](https://github.com/johnnyh209/Enabling-WinRM/assets/33064730/a314ce0e-f022-4a36-83e3-a2a5bcf04658)
+
+2. Right-Click `Inbound Rules` and click on `New Rule` to open the `New Inbound Rule Wizard`.
+![4  Right click inbound rules, new rule](https://github.com/johnnyh209/Enabling-WinRM/assets/33064730/34d538be-8f8d-4357-b56b-d5219c0e1fb4)
+
+3. In the `New Inbound Rule Wizard`, select **Predefined**. In the drop-down menu under **Predefined**, select `Windows Remote Management`. Then click `Next`.
+![5](https://github.com/johnnyh209/Enabling-WinRM/assets/33064730/303eeba5-9e3d-4b00-9bbf-40fa4e8c938b)
+
+4. Click `Next` on the `Predefined Rules` page.
+![6  click next](https://github.com/johnnyh209/Enabling-WinRM/assets/33064730/d167ba73-bb2e-4be2-8478-faa0641ccf51)
+
+5. Select `Allow the connection` and click finished.
+![7  Allow the connection](https://github.com/johnnyh209/Enabling-WinRM/assets/33064730/11f7c25e-2c26-4f85-bd25-f84730829955)
+
+## GPUdate
+
+1. To ensure that the group policy has been applied to the systems, use the command line or PowerShell on each system that the group policy has been applied to and run the command `gpupdate /force`.
+ ![8](https://github.com/johnnyh209/Enabling-WinRM/assets/33064730/2418fcf3-112c-4d41-8177-a75dda949de6)
