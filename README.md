@@ -10,6 +10,8 @@ This guide will use two separate methods to enable WinRM on a computer. This com
 2. Enter in the following command: `Enable-PSRemoting`.
 ![Step 2 (Client PS)](https://github.com/johnnyh209/Enabling-WinRM/assets/33064730/ea6d636f-20eb-48ef-8352-820827803b24)
 
+The `Enable-PSRemoting` commandlet will register PowerShell as an endpoint, and enable WInRM and have it be started automatically, and setup a firewall exception remoting traffic. 
+
 # Method 2: Using Group Policy
 
 1. In Server Manager on your Windows Server system, open `Group Policy Management` console located in the `Tools` dropdown menu. If it is not listed, you will have to install it using the `Add roles and features` wizard. Then, navigate the directory tree on the left hand side `(Forest: [your domain] > Domains > [your domain] > right-click on the group you want to assign the group policy to) > Create a GPU in this domain and link it here`.
